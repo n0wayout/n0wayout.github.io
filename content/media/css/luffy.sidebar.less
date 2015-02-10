@@ -1,0 +1,56 @@
+/* -*- css -*- */
+
+#lf-links {
+    font-size: small;
+    color: #6F6F6F;
+    font-weight: normal;
+    font-family: @font-regular;
+    a {
+        color: lighten(@theme-color, 20%);
+    }
+    .lf-link {
+        text-align: right;
+        & > p {
+            display: inline;
+            &:after {
+                content: ":";
+            }
+        }
+        ul {
+	   display: inline;
+           margin-left: 0.2em;
+        }
+        li {
+	   display: inline;
+           padding: 0;
+           &:first-child:before {
+               content: "";
+           }
+	   &:before {
+	       content: " — ";
+	   }
+        }
+    }
+    .lf-link.lf-share {
+        padding-top: 12px;
+        & > p { display: none; }
+        a {
+            text-indent: 100%;
+            border-style: none;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all .5s;
+            &:hover {
+                transform: translatey(-4px);
+            }
+        }
+        li { padding-left: 4px; }
+        li:before { content: ""; }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+   #lf-links {
+       display: none;
+   }
+}
